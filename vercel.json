@@ -1,25 +1,37 @@
 {
     "version": 2,
-      "framework": null,
-    "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.6.0" }
-    },
-    "routes": [{
-        "src": "/(.*)",
-        "dest": "/api/index.php"
-    }],
+    "builds": [
+        {
+            "src": "api/index.php",
+            "use": "vercel-php@0.6.0"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
-        "APP_URL": "https://yourproductionurl.com",
+        "APP_DEBUG": "false",
+        "APP_URL": "https://nama-proyek-kamu.vercel.app",
+
+        "DB_CONNECTION": "mysql",
+        "DB_HOST": "nama_host_database_kamu",
+        "DB_PORT": "3306",
+        "DB_DATABASE": "nama_database",
+        "DB_USERNAME": "username_db",
+        "DB_PASSWORD": "password_db",
+
+        "APP_KEY": "base64:kunci_app_key_kamu_di_sini",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
         "APP_ROUTES_CACHE": "/tmp/routes.php",
         "APP_SERVICES_CACHE": "/tmp/services.php",
-        "VIEW_COMPILED_PATH": "/tmp",
-
+        "VIEW_COMPILED_PATH": "/tmp/views",
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie"

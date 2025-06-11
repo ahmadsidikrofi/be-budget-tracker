@@ -2,6 +2,7 @@
 
 // Register the Composer autoloader...
 require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../public/index.php';
 
 // Bootstrap Laravel and handle the request...
 /** @var Application $app */
