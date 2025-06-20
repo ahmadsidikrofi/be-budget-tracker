@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\CategoriesController;
+use App\Http\Controllers\API\DashboardController;
 use App\Http\Controllers\API\TransactionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -33,4 +34,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/transactions/{id}', [TransactionController::class, "GetTransactionById"]);
     Route::put('/transactions/{id}', [TransactionController::class, "UpdateTransaction"]);
     Route::delete('/transactions/{id}', [TransactionController::class, "DeleteTransaction"]);
+
+    // Dashboard
+    Route::get('/dashboard/recent-transactions', [DashboardController::class, "GetLast5Transactions"]);
+    Route::get('/dashboard/summary', [DashboardController::class, "GetSummaryBudget"]);
+    Route::get('/reports/spending-by-category', [DashboardController::class, "GetSpendingByCategory"]);
+    Route::get('/reports/income-expense-trend', [DashboardController::class, "GetIncomeExpenseTrend"]);
 });

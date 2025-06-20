@@ -74,4 +74,34 @@ class TransactionController extends Controller
         $transaction->delete();
         return response()->json(['message' => 'Delete transaction succed'], 204);
     }
+
+    public function UpdateTransaction( Request $request, $id )
+    {
+        if (!Auth::check()) {
+            return response()->json(['message' => 'Unauthenticated'], 401);
+        }
+        $validated = $request->validate([
+            'category_id' => [
+                'required',
+                'integer',
+                Rule::exists('categories', 'id')->where('user_id', Auth::id())
+            ],
+            'amount' => 'required|numeric|gt:0',
+            'description' => 'required|string|max:255',
+            'transaction_date' => 'required|date_format:Y-m-d',
+        ]);
+
+        $transaction = TransactionModel::find($id);
+        if (!$transaction) {
+            return response()->json(['message' => 'Transaction not found'], 404);
+        }
+        if ($transaction->user_id !== Auth::id()) {
+            return response()->json(['message' => 'Forbidden'], 403);
+        }
+
+        $transaction->update($validated);
+        $transaction->refresh()->load('category');
+
+        return response()->json($transaction, 200);
+    }
 }
