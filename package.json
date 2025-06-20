@@ -3,11 +3,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
-        "dev": "vite",
-        "scripts": {
-            "vercel-build": "php artisan config:clear && php artisan route:clear && php artisan view:clear && php artisan config:cache"
-        }
+        "vercel-build": "php artisan config:clear && php artisan route:clear && php artisan view:clear && php artisan config:cache"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
