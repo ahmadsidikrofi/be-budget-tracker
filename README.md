@@ -20,6 +20,21 @@ FinTrack adalah aplikasi web modern yang memungkinkan pengguna untuk mencatat pe
 
 ---
 
+## ✨ Fitur Utama
+
+- **📊 Dashboard Interaktif:** Visualisasi data keuangan secara real-time dengan kartu summary, pie chart pengeluaran, dan bar chart tren pemasukan vs. pengeluaran.
+
+- **💸 Manajemen Transaksi:** Fungsionalitas CRUD (Create, Read, Update, Delete) penuh untuk semua catatan pemasukan dan pengeluaran dengan antarmuka yang intuitif.
+
+- **🏷️ Kategori Personal:** Pengguna dapat membuat, mengubah, dan menghapus kategori pemasukan/pengeluaran mereka sendiri untuk pencatatan yang lebih personal.
+
+- **🤖 Laporan Analisis AI:** Fitur unggulan di mana pengguna bisa mendapatkan ringkasan dan saran keuangan yang di-generate oleh AI (IBM Granite) berdasarkan data riil mereka.
+
+- **🔐 Autentikasi Aman:** Sistem registrasi, login, dan logout yang aman menggunakan token-based authentication (Laravel Sanctum) untuk melindungi data pengguna.
+
+- **📱 Desain Responsif:** Tampilan yang optimal dan nyaman digunakan di berbagai ukuran layar, dari desktop hingga mobile.
+
+
 ## ⚙️ Getting Started
 
 Berikut adalah langkah-langkah untuk menjalankan proyek ini di lingkungan lokal.
@@ -90,12 +105,4 @@ Berikut adalah endpoint utama yang disediakan oleh API ini. Semua endpoint (kecu
 | <img src="https://img.shields.io/badge/GET-20C997?style=for-the-badge" alt="GET"/> | `/api/dashboard/summary` | Mengambil data ringkasan untuk kartu dashboard. | ✅ |
 | <img src="https://img.shields.io/badge/GET-20C997?style=for-the-badge" alt="GET"/> | `/api/reports/spending-by-category` | Mengambil data agregat untuk pie chart. | ✅ |
 | <img src="https://img.shields.io/badge/GET-20C997?style=for-the-badge" alt="GET"/> | `/api/reports/income-expense-trend` | Mengambil data tren untuk bar chart. | ✅ |
-
-
-### Tips Tambahan
-
-1.  **Ganti Placeholder:** Jangan lupa ganti `link_ke_screenshot...` dan `https://github.com/namamu/...` dengan link yang sebenarnya.
-2.  **Screenshot/GIF itu Wajib:** Satu tips pro terakhir: tambahkan screenshot atau GIF singkat aplikasi yang sedang berjalan di bagian paling atas (di bawah judul). Ini dampaknya **luar biasa** untuk menarik perhatian dan membuat repo-mu kelihatan "hidup". Kamu bisa rekam layar pakai aplikasi seperti ScreenToGif (Windows) atau Kap (Mac).
-
-Dengan `README.md` seperti ini, proyekmu akan terlihat sangat profesional dan terstruktur dengan baik. Mantap!
     
