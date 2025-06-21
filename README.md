@@ -66,6 +66,31 @@ Pastikan kamu sudah menginstal perangkat lunak berikut:
 
 10. Server akan berjalan di http://127.0.0.1:8000
 
+## 🔌 Endpoint API
+
+Berikut adalah endpoint utama yang disediakan oleh API ini. Semua endpoint (kecuali `/register` dan `/login`) memerlukan Bearer Token untuk autentikasi.
+
+| Method | Endpoint | Deskripsi | Wajib Auth |
+| :--- | :--- | :--- | :---: |
+| <img src="https://img.shields.io/badge/POST-4A90E2?style=for-the-badge" alt="POST"/> | `/api/register` | Registrasi user baru. | ❌ |
+| <img src="https://img.shields.io/badge/POST-4A90E2?style=for-the-badge" alt="POST"/> | `/api/login` | Login user & mendapatkan token. | ❌ |
+| <img src="https://img.shields.io/badge/POST-4A90E2?style=for-the-badge" alt="POST"/> | `/api/logout` | Logout user & menghapus token. | ✅ |
+| <img src="https://img.shields.io/badge/GET-20C997?style=for-the-badge" alt="GET"/> | `/api/user` | Mengambil data user yang sedang login. | ✅ |
+| | | | |
+| <img src="https://img.shields.io/badge/GET-20C997?style=for-the-badge" alt="GET"/> | `/api/categories` | Mengambil semua kategori milik user. | ✅ |
+| <img src="https://img.shields.io/badge/POST-4A90E2?style=for-the-badge" alt="POST"/> | `/api/categories` | Membuat kategori baru. | ✅ |
+| <img src="https://img.shields.io/badge/PUT-F5A623?style=for-the-badge" alt="PUT"/> | `/api/categories/{id}` | Mengupdate kategori. | ✅ |
+| <img src="https://img.shields.io/badge/DELETE-D0021B?style=for-the-badge" alt="DELETE"/> | `/api/categories/{id}` | Menghapus kategori. | ✅ |
+| | | | |
+| <img src="https://img.shields.io/badge/GET-20C997?style=for-the-badge" alt="GET"/> | `/api/transactions` | Mengambil daftar transaksi (dengan paginasi). | ✅ |
+| <img src="https://img.shields.io/badge/POST-4A90E2?style=for-the-badge" alt="POST"/> | `/api/transactions` | Membuat transaksi baru. | ✅ |
+| <img src="https://img.shields.io/badge/PUT-F5A623?style=for-the-badge" alt="PUT"/> | `/api/transactions/{id}` | Mengupdate transaksi. | ✅ |
+| <img src="https://img.shields.io/badge/DELETE-D0021B?style=for-the-badge" alt="DELETE"/> | `/api/transactions/{id}` | Menghapus transaksi. | ✅ |
+| | | | |
+| <img src="https://img.shields.io/badge/GET-20C997?style=for-the-badge" alt="GET"/> | `/api/dashboard/summary` | Mengambil data ringkasan untuk kartu dashboard. | ✅ |
+| <img src="https://img.shields.io/badge/GET-20C997?style=for-the-badge" alt="GET"/> | `/api/reports/spending-by-category` | Mengambil data agregat untuk pie chart. | ✅ |
+| <img src="https://img.shields.io/badge/GET-20C997?style=for-the-badge" alt="GET"/> | `/api/reports/income-expense-trend` | Mengambil data tren untuk bar chart. | ✅ |
+
 
 ### Tips Tambahan
 
