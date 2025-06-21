@@ -55,7 +55,7 @@ Pastikan kamu sudah menginstal perangkat lunak berikut:
    
 2. Masuk ke direktori proyek:
    ```sh
-   cd backend-fintrack
+   cd be-budget-tracker
    
 3. Install dependensi Composer:
    ```sh
