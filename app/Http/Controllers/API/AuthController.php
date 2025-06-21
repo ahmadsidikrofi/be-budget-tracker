@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -15,9 +16,9 @@ class AuthController extends Controller
     public function RegisterUser( Request $request )
     {
         $valid = Validator::make($request->all(), [
-            'name' => 'required',
-            'email' => 'required|unique:users,email',
-            'password' => 'required|min:7'
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:7'
         ], [
             'name.required' => 'Your name is required',
             'email.required' => 'Your email is required',
@@ -41,6 +42,7 @@ class AuthController extends Controller
         }
 
         try {
+            DB::beginTransaction();
             $newUser = User::create([
                 'name' => $request->input('name'),
                 'email' => $request->input('email'),
