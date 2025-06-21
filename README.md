@@ -10,41 +10,67 @@ FinTrack adalah aplikasi web modern yang memungkinkan pengguna untuk mencatat pe
 
 > **Repositori Backend (Laravel API):** Repositori ini berisi kode untuk sisi **Backend** aplikasi. Dibangun dengan framework Laravel, tugas utamanya adalah menyediakan REST API yang aman dan robust untuk di-consume oleh aplikasi Frontend. Ini mencakup logika untuk autentikasi pengguna, operasi CRUD (Create, Read, Update, Delete) data, dan kalkulasi data untuk laporan.
 
-> **Repositori Frontend (Next.js):** Repositori ini berisi kode untuk sisi **Frontend** aplikasi. Dibangun dengan Next.js (React), tugas utamanya adalah menyediakan User Interface (UI) yang modern, interaktif, dan responsif. Aplikasi ini mengonsumsi data dari Backend API untuk menampilkan informasi, chart, dan laporan kepada pengguna.
-
 ---
 
 ## 🚀 Dibangun Dengan
 
-* **Backend:** Laravel 11, PHP 8.2, MySQL
+* **Backend:** Laravel 12, PHP 8.2, MySQL
 * **API:** RESTful API, Laravel Sanctum (Token-based Authentication)
-* **Deployment:** Vercel
-
-* **Framework:** Next.js 14, React 18
-* **Styling:** Tailwind CSS, shadcn/ui
-* **State Management:** React Hooks (useState, useEffect, useContext)
-* **Data Fetching:** Axios
-* **Charts & Visuals:** Recharts, `react-markdown`
 * **Deployment:** Vercel
 
 ---
 
-## ⚙️ Memulai (Getting Started)
+## ⚙️ Getting Started
 
 Berikut adalah langkah-langkah untuk menjalankan proyek ini di lingkungan lokal.
 
-### Prasyarat
+### Pre-requisite
 
 Pastikan kamu sudah menginstal perangkat lunak berikut:
 - (Untuk Backend) PHP 8.2 atau lebih baru
 - (Untuk Backend) Composer
 - (Untuk Backend) MySQL atau database sejenis
-- (Untuk Frontend) Node.js v18 atau lebih baru
-- (Untuk Frontend) npm / yarn / pnpm
 
 ### Instalasi
 
 **Untuk Backend (Laravel):**
 1. Clone repository ini:
    ```sh
-   git clone [https://github.com/namamu/backend-fintrack.git](https://github.com/namamu/backend-fintrack.git)    
+   git clone [https://github.com/namamu/backend-fintrack.git](https://github.com/namamu/backend-fintrack.git)
+   
+2. Masuk ke direktori proyek:
+   ```sh
+   cd backend-fintrack
+   
+3. Install dependensi Composer:
+   ```sh
+   composer install
+   
+4. Salin file .env.example menjadi .env:
+   ```sh
+   cp .env.example .env
+   
+5. Generate application key:
+   ```sh
+   php artisan key:generate
+   
+6. Konfigurasi koneksi database-mu di dalam file .env.
+
+7. Jalankan migrasi untuk membuat tabel di database:
+   ```sh
+   php artisan migrate
+
+8. Jalankan server development
+   ```sh
+   php artisan serve
+
+10. Server akan berjalan di http://127.0.0.1:8000
+
+
+### Tips Tambahan
+
+1.  **Ganti Placeholder:** Jangan lupa ganti `link_ke_screenshot...` dan `https://github.com/namamu/...` dengan link yang sebenarnya.
+2.  **Screenshot/GIF itu Wajib:** Satu tips pro terakhir: tambahkan screenshot atau GIF singkat aplikasi yang sedang berjalan di bagian paling atas (di bawah judul). Ini dampaknya **luar biasa** untuk menarik perhatian dan membuat repo-mu kelihatan "hidup". Kamu bisa rekam layar pakai aplikasi seperti ScreenToGif (Windows) atau Kap (Mac).
+
+Dengan `README.md` seperti ini, proyekmu akan terlihat sangat profesional dan terstruktur dengan baik. Mantap!
+    
