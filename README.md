@@ -51,7 +51,7 @@ Pastikan kamu sudah menginstal perangkat lunak berikut:
 **Untuk Backend (Laravel):**
 1. Clone repository ini:
    ```sh
-   git clone [https://github.com/namamu/backend-fintrack.git](https://github.com/namamu/backend-fintrack.git)
+   git clone [https://github.com/ahmadsidikrofi/be-budget-tracker.git](https://github.com/ahmadsidikrofi/be-budget-tracker.git)
    
 2. Masuk ke direktori proyek:
    ```sh
