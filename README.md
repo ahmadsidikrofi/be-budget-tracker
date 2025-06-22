@@ -110,7 +110,7 @@ Berikut adalah endpoint utama yang disediakan oleh API ini. Semua endpoint (kecu
 
 Proyek FinTrack ini tidak hanya menghasilkan aplikasi dengan fitur AI, tetapi juga secara aktif memanfaatkan kecerdasan buatan (model **IBM Granite**) selama siklus pengembangannya. Pemanfaatan AI dibagi menjadi dua peran utama: sebagai **Akselerator Pengembangan** untuk efisiensi dan sebagai **Mesin Analisis** yang menjadi fitur inti aplikasi.
 
-### 1. AI sebagai Akselerator Pengembangan (Di Balik Layar)
+### AI sebagai Akselerator Pengembangan
 
 Selama proses pembangunan backend, AI digunakan sebagai *co-pilot* untuk mempercepat tugas-tugas repetitif dan memastikan konsistensi kode. Dengan merancang *prompt* yang terstruktur, AI diinstruksikan untuk men-generate:
 
