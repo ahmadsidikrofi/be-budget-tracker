@@ -49,6 +49,7 @@ class AuthController extends Controller
                 'password' => Hash::make($request->password)
             ]);
             $token = $newUser->createToken('auth_token')->plainTextToken;
+            DB::commit();
             if ($newUser) {
                 return response()->json([
                     'success' => true,
@@ -59,11 +60,12 @@ class AuthController extends Controller
                 ], 201);
             }
         } catch (\Exception $e) {
+            DB::rollBack();
             return response()->json([
                 'success' => false,
                 'message' => 'Registration failed',
                 'error' => 'You have no right to know. Let the backend handle it',
-                'if you insist' => $e
+                'if you insist' => $e->getMessage(),
             ], 500);
         }
     }
