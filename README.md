@@ -42,9 +42,9 @@ Berikut adalah langkah-langkah untuk menjalankan proyek ini di lingkungan lokal.
 ### Pre-requisite
 
 Pastikan kamu sudah menginstal perangkat lunak berikut:
-- (Untuk Backend) PHP 8.2 atau lebih baru
-- (Untuk Backend) Composer
-- (Untuk Backend) MySQL atau database sejenis
+-  PHP 8.2 atau lebih baru
+- Composer
+- MySQL, Sqlite atau database sejenis
 
 ### Instalasi
 
@@ -105,4 +105,15 @@ Berikut adalah endpoint utama yang disediakan oleh API ini. Semua endpoint (kecu
 | <img src="https://img.shields.io/badge/GET-20C997?style=for-the-badge" alt="GET"/> | `/api/dashboard/summary` | Mengambil data ringkasan untuk kartu dashboard. | ✅ |
 | <img src="https://img.shields.io/badge/GET-20C997?style=for-the-badge" alt="GET"/> | `/api/reports/spending-by-category` | Mengambil data agregat untuk pie chart. | ✅ |
 | <img src="https://img.shields.io/badge/GET-20C997?style=for-the-badge" alt="GET"/> | `/api/reports/income-expense-trend` | Mengambil data tren untuk bar chart. | ✅ |
-    
+
+## 🤖 Penjelasan AI Support Explanation
+
+Proyek FinTrack ini tidak hanya menghasilkan aplikasi dengan fitur AI, tetapi juga secara aktif memanfaatkan kecerdasan buatan (model **IBM Granite**) selama siklus pengembangannya. Pemanfaatan AI dibagi menjadi dua peran utama: sebagai **Akselerator Pengembangan** untuk efisiensi dan sebagai **Mesin Analisis** yang menjadi fitur inti aplikasi.
+
+### AI sebagai Akselerator Pengembangan
+
+Selama proses pembangunan backend, AI digunakan sebagai *co-pilot* untuk mempercepat tugas-tugas repetitif dan memastikan konsistensi kode. Dengan merancang *prompt* yang terstruktur, AI diinstruksikan untuk men-generate:
+
+- **Skema Migrasi Database:** Membuat file migrasi Laravel untuk tabel `users`, `categories`, dan `transactions` dengan tipe data, relasi (`foreign key`), dan *constraints* yang tepat.
+- **Model Eloquent:** Men-generate *class* Model lengkap dengan properti `$fillable` untuk keamanan *mass-assignment* dan metode relasi seperti `hasMany()` dan `belongsTo()`.
+- **Kerangka Logika Controller:** Membuat struktur dasar untuk metode-metode di dalam Controller, seperti fungsi `register` dan `login`, lengkap dengan validasi request dan format respons JSON standar.
