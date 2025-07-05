@@ -43,7 +43,6 @@ class DashboardController extends Controller
         ->groupBy('categories.type')
         ->get()
         ->keyBy('type');
-        dd($summary);
 
         $totalIncome = $summary->get('Pemasukan')?->total ?? 0;
         $totalExpense = $summary->get('Pengeluaran')?->total ?? 0;
