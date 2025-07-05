@@ -43,19 +43,15 @@ class DashboardController extends Controller
         ->groupBy('categories.type')
         ->get()
         ->keyBy('type');
+        dd($summary);
 
-        $totalIncome = $summary->get('Pemasukan')->total ?? 0;
-        $totalExpense = $summary->get('Pengeluaran')->total ?? 0;
-
-        $incomeChangePercentage = $totalIncome / $totalIncome * 100;
-        $expenseChangePercentage = $totalExpense / $totalExpense * 100;
+        $totalIncome = $summary->get('Pemasukan')?->total ?? 0;
+        $totalExpense = $summary->get('Pengeluaran')?->total ?? 0;
 
         return response()->json([
             'total_income' => $totalIncome,
             'total_expense' => $totalExpense,
             'current_balance' => $totalIncome - $totalExpense,
-            // 'income_change_percentage' => round($incomeChangePercentage, 2),
-            // 'expense_change_percentage' => round($expenseChangePercentage, 2),
         ], 200);
     }
 
