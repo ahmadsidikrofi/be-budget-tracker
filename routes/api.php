@@ -5,6 +5,7 @@ use App\Http\Controllers\API\CategoriesController;
 use App\Http\Controllers\API\DashboardController;
 use App\Http\Controllers\API\TransactionController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/user', function (Request $request) {
@@ -40,4 +41,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/dashboard/summary', [DashboardController::class, "GetSummaryBudget"]);
     Route::get('/reports/spending-by-category', [DashboardController::class, "GetSpendingByCategory"]);
     Route::get('/reports/income-expense-trend', [DashboardController::class, "GetIncomeExpenseTrend"]);
+});
+
+Route::get('/migrate', function () {
+    Artisan::call('migrate', ['--force' => true]);
+    return 'Migrated';
 });
