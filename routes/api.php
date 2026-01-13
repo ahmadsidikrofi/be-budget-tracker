@@ -42,8 +42,3 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/reports/spending-by-category', [DashboardController::class, "GetSpendingByCategory"]);
     Route::get('/reports/income-expense-trend', [DashboardController::class, "GetIncomeExpenseTrend"]);
 });
-
-Route::get('/migrate', function () {
-    Artisan::call('migrate', ['--force' => true]);
-    return 'Migrated';
-});
